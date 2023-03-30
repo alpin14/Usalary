@@ -10,7 +10,7 @@
     <string name="bonus2"><![CDATA[Bonus >50%]]></string>
     <string name="bonus3"><![CDATA[Bonus <50%]]></string>
     <string name="bonus4">Bonus 0%</string>
-    <string name="keterangan"><![CDATA[Ket: 100% : Absen 100% dan Kinerja Bagus,  >50% : Absen 100% dan Kinerja Cukup,  <50% : Absen 50% dan Kinerja Baik,  0% : Absen 50% dan Kinerja Cukup]]></string>
+    <string name="keterangan"><![CDATA[Ket: 100% = Rp1.000.000, >50% = Rp500.000, <50% = Rp250.000, 0% = Rp0]]></string>
     <string name="pokok_invalid">Gaji Tidak Boleh Kosong.</string>
     <string name="bonus_invalid">Pilih Bonus Karyawan.</string>
 </resources>

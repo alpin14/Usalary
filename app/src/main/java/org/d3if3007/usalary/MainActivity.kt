@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener { hitungGaji() }
     }
     private fun hitungGaji() {
-        val pokok = binding.gajiEditText.text.toString()
+        val pokok = binding.gajiPokokInp.text.toString()
         if(TextUtils.isEmpty(pokok)){
             Toast.makeText(this, R.string.pokok_invalid, Toast.LENGTH_LONG).show()
             return
