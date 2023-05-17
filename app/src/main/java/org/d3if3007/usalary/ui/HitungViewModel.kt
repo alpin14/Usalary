@@ -1,4 +1,4 @@
-package org.d3if3007.usalary
+package org.d3if3007.usalary.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
