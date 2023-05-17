@@ -1,14 +1,19 @@
 package org.d3if3007.usalary
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import org.d3if3007.usalary.databinding.ActivityMainBinding
+import org.d3if3007.usalary.model.TotalGaji
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +33,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.bonus_invalid, Toast.LENGTH_LONG).show()
             return
         }
-        val gaji = pokok.toFloat() + bonus.toFloat()
-        binding.textView5.text = getString(R.string.gaji_x, gaji)
+        val result = viewModel.hitungGaji(
+            pokok.toFloat(),
+            bonus.toFloat()
+        )
+        showResult(result)
+    }
+
+    private fun showResult(result: TotalGaji){
+        binding.textView5.text = getString(R.string.gaji_x, result.gaji)
     }
 }
