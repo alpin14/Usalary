@@ -1,12 +1,17 @@
 package org.d3if3007.usalary
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.d3if3007.usalary.model.TotalGaji
 
 class MainViewModel : ViewModel() {
 
-    fun hitungGaji(pokok: Float, bonus: Float): TotalGaji {
+    private val totalGaji = MutableLiveData<TotalGaji?>()
+
+    fun hitungGaji(pokok: Float, bonus: Float) {
         val gaji = pokok + bonus
-        return TotalGaji(gaji)
+        totalGaji.value = TotalGaji(gaji)
     }
+    fun getTotalGaji(): LiveData<TotalGaji?> = totalGaji
 }

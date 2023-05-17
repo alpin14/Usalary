@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.button.setOnClickListener { hitungGaji() }
+        viewModel.getTotalGaji().observe(this, { showResult(it) })
     }
     private fun hitungGaji() {
         val pokok = binding.gajiPokokInp.text.toString()
@@ -33,14 +34,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.bonus_invalid, Toast.LENGTH_LONG).show()
             return
         }
-        val result = viewModel.hitungGaji(
+        viewModel.hitungGaji(
             pokok.toFloat(),
             bonus.toFloat()
         )
-        showResult(result)
     }
 
-    private fun showResult(result: TotalGaji){
+    private fun showResult(result: TotalGaji?){
+        if (result == null) return
         binding.textView5.text = getString(R.string.gaji_x, result.gaji)
     }
 }
