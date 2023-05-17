@@ -23,18 +23,12 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.pokok_invalid, Toast.LENGTH_LONG).show()
             return
         }
-        val selectedId = binding.radioGroup.checkedRadioButtonId
-        if (selectedId == -1){
+        val bonus = binding.bonusGajiInp.text.toString()
+        if(TextUtils.isEmpty(bonus)) {
             Toast.makeText(this, R.string.bonus_invalid, Toast.LENGTH_LONG).show()
             return
         }
-        val bonus = when (binding.radioGroup.checkedRadioButtonId){
-            R.id.radioButton100->1000000
-            R.id.radioButtonLebih50->500000
-            R.id.radioButtonKurang50->250000
-            else->0
-        }
-        val gaji = pokok.toFloat() + bonus
+        val gaji = pokok.toFloat() + bonus.toFloat()
         binding.textView5.text = getString(R.string.gaji_x, gaji)
     }
 }
