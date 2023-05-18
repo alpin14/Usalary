@@ -1,5 +1,6 @@
 package org.d3if3007.usalary.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -33,9 +34,23 @@ class HitungFragment : Fragment() {
                 R.id.action_hitungFragment_to_saranFragment
             )
         }
+        binding.shareButton.setOnClickListener { shareData() }
         viewModel.getTotalGaji().observe(requireActivity(), { showResult(it) })
     }
-    private fun hitungGaji() {
+    private fun shareData() {
+        val message = getString(R.string.bagikan_template,
+            binding.gajiPokokInp.text,
+            binding.bonusGajiInp.text,
+            binding.textView5.text,
+        )
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
+    }
+        private fun hitungGaji() {
         val pokok = binding.gajiPokokInp.text.toString()
         if(TextUtils.isEmpty(pokok)){
             Toast.makeText(context, R.string.pokok_invalid, Toast.LENGTH_LONG).show()
@@ -55,7 +70,7 @@ class HitungFragment : Fragment() {
     private fun showResult(result: TotalGaji?){
         if (result == null) return
         binding.textView5.text = getString(R.string.gaji_x, result.gaji)
-        binding.saranButton.visibility = View.VISIBLE
+        binding.buttonGroup.visibility = View.VISIBLE
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

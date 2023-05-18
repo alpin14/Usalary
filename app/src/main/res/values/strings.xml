@@ -19,4 +19,7 @@
 
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">Usalary adalah aplikasi pencatatan penghitungan gaji berbasis mobile yang bertujuan untuk membantu dan memberikan catatan dan riwayat  tentang gaji anda melalui algoritma perhitungan gaji pokok yang ditambahkan dengan bonus yang anda dapatkan tiap bulan sehingga menghitung gaji dan melihat detail riwayat gaji sangat mudah dan tepat tanpa berkurang sedikitpun serta tidak perlu lagi secara manual menggunakan kalkulator dan sebagainya. </string>
+    <string name="bagikan">Bagikan</string>
+
+    <string name="bagikan_template">Gaji Bulan Ini: %1$s Rupiah\nBonus Bulan Ini: %2$s Rupiah\n\n%3$s Rupiah</string>
 </resources>
