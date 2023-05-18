@@ -11,9 +11,12 @@
     <string name="bonus_invalid">Isi dengan 0 jika tidak ada bonus</string>
 
     <string name="judul_hemat">Berhematlah!!</string>
-    <string name="judul_boros">Apresiasi dirimu!</string>
+    <string name="judul_boros">Akhirnya Kamu Gajian!</string>
 
     <string name="saran_hemat">Gajimu bulan ini sangat tipis, hematlah agar kau tetap makan!.</string>
-    <string name="saran_boros">Gaji yang baik didapat dari kerja keras, Apresiasi dirimu dengan berbelanja, namun menabung lebih baik!!.</string>
+    <string name="saran_boros">Gaji besar didapat dari kerja keras, Apresiasi dirimu dengan berbelanja sesekali, namun menabung untuk masa depan lebih baik!!.</string>
     <string name="lihat_saran">Saran</string>
+
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Usalary adalah aplikasi pencatatan penghitungan gaji berbasis mobile yang bertujuan untuk membantu dan memberikan catatan dan riwayat  tentang gaji anda melalui algoritma perhitungan gaji pokok yang ditambahkan dengan bonus yang anda dapatkan tiap bulan sehingga menghitung gaji dan melihat detail riwayat gaji sangat mudah dan tepat tanpa berkurang sedikitpun serta tidak perlu lagi secara manual menggunakan kalkulator dan sebagainya. </string>
 </resources>

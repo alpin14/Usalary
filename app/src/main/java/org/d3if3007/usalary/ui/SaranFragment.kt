@@ -1,18 +1,20 @@
 package org.d3if3007.usalary.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import org.d3if3007.usalary.R
 import org.d3if3007.usalary.databinding.FragmentSaranBinding
+import org.d3if3007.usalary.model.TotalGaji
 
 class SaranFragment: Fragment() {
 
     private lateinit var binding: FragmentSaranBinding
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentSaranBinding.inflate(layoutInflater, container, false)
