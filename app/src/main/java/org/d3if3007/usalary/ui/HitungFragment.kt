@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import org.d3if3007.usalary.R
 import org.d3if3007.usalary.databinding.FragmentHitungBinding
 import org.d3if3007.usalary.model.TotalGaji
@@ -27,6 +28,11 @@ class HitungFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.button.setOnClickListener { hitungGaji() }
+        binding.saranButton.setOnClickListener {
+            it.findNavController().navigate(
+                R.id.action_hitungFragment_to_saranFragment
+            )
+        }
         viewModel.getTotalGaji().observe(requireActivity(), { showResult(it) })
     }
     private fun hitungGaji() {
@@ -49,5 +55,6 @@ class HitungFragment : Fragment() {
     private fun showResult(result: TotalGaji?){
         if (result == null) return
         binding.textView5.text = getString(R.string.gaji_x, result.gaji)
+        binding.saranButton.visibility = View.VISIBLE
     }
 }
