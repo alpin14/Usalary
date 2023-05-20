@@ -10,6 +10,6 @@ interface GajiDao {
     @Insert
     fun insert(gaji: GajiEntity)
 
-    @Query("SELECT * FROM gaji ORDER BY id DESC LIMIT 1")
-    fun getLastGaji(): LiveData<GajiEntity?>
+    @Query("SELECT * FROM gaji ORDER BY id DESC")
+    fun getLastGaji(): LiveData<List<GajiEntity>>
 }

@@ -15,8 +15,6 @@ class HitungViewModel(private val db: GajiDao) : ViewModel() {
 
     private val totalGaji = MutableLiveData<TotalGaji?>()
 
-    val data = db.getLastGaji()
-
     fun hitungGaji(pokok: Float, bonus: Float) {
         val gaji = pokok + bonus
         totalGaji.value = TotalGaji(gaji)
