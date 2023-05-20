@@ -1,8 +1,9 @@
-package org.d3if3007.usalary.ui
+package org.d3if3007.usalary.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,13 +12,16 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if3007.usalary.R
 import org.d3if3007.usalary.databinding.FragmentHitungBinding
+import org.d3if3007.usalary.db.GajiDb
 import org.d3if3007.usalary.model.TotalGaji
 
 class HitungFragment : Fragment() {
     private lateinit var binding: FragmentHitungBinding
 
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
+    private val viewModel: HitungViewModel by lazy {
+        val db = GajiDb.getInstance(requireContext())
+        val factory = HitungViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[HitungViewModel::class.java]
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +40,11 @@ class HitungFragment : Fragment() {
         }
         binding.shareButton.setOnClickListener { shareData() }
         viewModel.getTotalGaji().observe(requireActivity(), { showResult(it) })
+
+        viewModel.data.observe(viewLifecycleOwner, {
+            if (it == null) return@observe
+            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
+        })
     }
     private fun shareData() {
         val message = getString(R.string.bagikan_template,
