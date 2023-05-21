@@ -2,12 +2,14 @@ package org.d3if3007.usalary.ui.riwayat
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if3007.usalary.R
 import org.d3if3007.usalary.databinding.FragmentRiwayatBinding
 import org.d3if3007.usalary.db.GajiDb
 

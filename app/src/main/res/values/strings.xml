@@ -27,5 +27,10 @@
 
     <string name="data_x">Gaji Pokok: %1$.2f Rupiah\nBonus: %2$.2f Rupiah</string>
     <string name="hasil_x">Total Gaji: %1$.2f Rupiah</string>
+    <string name="buttonDelete">Delete</string>
+
+    <string name="konfirmasi_hapus_satu">Hapus riwayat gaji?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 
 </resources>

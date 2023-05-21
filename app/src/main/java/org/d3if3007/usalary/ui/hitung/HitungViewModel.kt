@@ -12,7 +12,7 @@ import org.d3if3007.usalary.db.GajiEntity
 import org.d3if3007.usalary.model.TotalGaji
 import org.d3if3007.usalary.model.hitungGaji
 
-class HitungViewModel(private val db: GajiDao) : ViewModel() {
+class   HitungViewModel(private val db: GajiDao) : ViewModel() {
 
     private val totalGaji = MutableLiveData<TotalGaji?>()
 
