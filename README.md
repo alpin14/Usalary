@@ -1,2 +1,2 @@
 # Usalary
-Aplikasi penghitungan gaji berbasis android
+Android-based salaries diary calculation app
