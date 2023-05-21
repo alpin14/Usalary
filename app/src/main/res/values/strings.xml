@@ -24,4 +24,8 @@
     <string name="bagikan_template">Gaji Bulan Ini: %1$s Rupiah\nBonus Bulan Ini: %2$s Rupiah\n\n%3$s Rupiah</string>
     <string name="belum_ada_data">Tidak ada riwayat gaji</string>
     <string name="riwayat">Riwayat Gaji</string>
+
+    <string name="data_x">Gaji Pokok: %1$.2f Rupiah\nBonus: %2$.2f Rupiah</string>
+    <string name="hasil_x">Total Gaji: %1$.2f Rupiah</string>
+
 </resources>

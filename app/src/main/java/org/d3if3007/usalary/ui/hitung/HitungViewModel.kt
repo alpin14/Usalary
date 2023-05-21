@@ -10,21 +10,21 @@ import kotlinx.coroutines.withContext
 import org.d3if3007.usalary.db.GajiDao
 import org.d3if3007.usalary.db.GajiEntity
 import org.d3if3007.usalary.model.TotalGaji
+import org.d3if3007.usalary.model.hitungGaji
 
 class HitungViewModel(private val db: GajiDao) : ViewModel() {
 
     private val totalGaji = MutableLiveData<TotalGaji?>()
 
     fun hitungGaji(pokok: Float, bonus: Float) {
-        val gaji = pokok + bonus
-        totalGaji.value = TotalGaji(gaji)
+        val dataGaji = GajiEntity(
+            pokok = pokok,
+            bonus = bonus
+        )
+        totalGaji.value = dataGaji.hitungGaji()
 
         viewModelScope.launch {
             withContext(Dispatchers. IO){
-                val dataGaji = GajiEntity(
-                    pokok = pokok,
-                    bonus = bonus
-                )
                 db.insert(dataGaji)
             }
         }
