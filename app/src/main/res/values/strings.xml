@@ -33,4 +33,6 @@
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
 
+    <string name="grid_view">Ubah View</string>
+
 </resources>
